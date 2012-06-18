@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "active_admin-acts_as_list/version"
+require "active_admin/acts_as_list/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "active_admin-acts_as_list"
-  s.version     = ActiveAdminActsAsList::VERSION
+  s.version     = ActiveAdmin::ActsAsList::VERSION
   s.authors     = ["Roberto Vasquez Angel"]
   s.email       = ["roberto@vasquez-angel.de"]
   s.homepage    = "http://blog.robotex.de"
