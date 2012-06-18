@@ -7,9 +7,9 @@ require "active_admin-acts_as_list/version"
 Gem::Specification.new do |s|
   s.name        = "active_admin-acts_as_list"
   s.version     = ActiveAdminActsAsList::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
+  s.authors     = ["Roberto Vasquez Angel"]
+  s.email       = ["roberto@vasquez-angel.de"]
+  s.homepage    = "http://blog.robotex.de"
   s.summary     = "TODO: Summary of ActiveAdminActsAsList."
   s.description = "TODO: Description of ActiveAdminActsAsList."
 
