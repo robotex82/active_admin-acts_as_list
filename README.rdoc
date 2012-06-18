@@ -1,3 +1,49 @@
 = ActiveAdminActsAsList
 
 This project rocks and uses MIT-LICENSE.
+
+= Prerequisites
+
+You need active_admin and acts_as_list.
+
+
+= Getting started
+
+Add ActiveAdminActsAsList to your gemfile.
+
+  gem 'active_admin-acts-as-list', '~> 0.0.5'
+
+  
+= Usage
+
+Assuming you have a Players model: 
+
+  class Player < ActiveRecord::Base
+    # acts as list
+    acts_as_list
+    default_scope :order => 'position ASC'
+    
+    #...
+  end
+
+
+You can add sortable columns, member actions and sorting like this:
+
+  #app/admin/players.rb
+  ActiveAdmin.register Player do
+    # Sort players by position
+    config.sort_order = 'position'
+    
+    # Add member actions for positioning.
+    sortable_member_actions
+    
+    index do
+      # This adds columns for moving up, down, top and bottom.
+      sortable_columns
+      
+      #...
+      column :firstname
+      column :lastname
+      default_actions
+    end
+  end
