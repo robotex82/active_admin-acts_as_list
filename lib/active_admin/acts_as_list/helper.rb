@@ -1,6 +1,6 @@
 module ActiveAdmin
   module ActsAsList
-    module ActiveAdminHelper
+    module Helper
       def sortable_columns
         column "&#9650;&#9650;".html_safe do |resource|
           link_to("&#9650;&#9650;".html_safe, self.send(:"move_to_top_admin_#{resource.class.model_name.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.first?
