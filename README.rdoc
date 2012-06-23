@@ -1,18 +1,28 @@
 = ActiveAdminActsAsList
 
-This project rocks and uses MIT-LICENSE.
+= Purpose
+
+Add sortable columns for active admin.
+
+= Features
+
+* Add member actions with one method call
+* Add sorting columns in your index views with one method call.
+* Integrates with acts_as_list
 
 = Prerequisites
 
 You need active_admin and acts_as_list.
 
+= Installation
 
-= Getting started
+Add it to your gemfile:
 
-Add ActiveAdminActsAsList to your gemfile.
+  gem 'active_admin-acts_as_list'
+  
+Install your bundle:
 
-  gem 'active_admin-acts-as-list', '~> 0.0.5'
-
+  > bundle install
   
 = Usage
 
@@ -47,3 +57,12 @@ You can add sortable columns, member actions and sorting like this:
       default_actions
     end
   end
+  
+= Todo
+
+* Tests, tests, tests.
+* Better docs.
+  
+= License
+  
+This project rocks and uses MIT-LICENSE.  

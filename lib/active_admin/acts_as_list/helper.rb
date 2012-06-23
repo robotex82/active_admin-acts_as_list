@@ -1,6 +1,22 @@
 module ActiveAdmin
   module ActsAsList
     module Helper
+      # Call this inside your index do...end bock to make your resource sortable.
+      #
+      # Example:
+      #
+      # #app/admin/players.rb
+      #
+      #  ActiveAdmin.register Player do
+      #    index do
+      #      # This adds columns for moving up, down, top and bottom.
+      #      sortable_columns    
+      #      #...
+      #      column :firstname
+      #      column :lastname
+      #      default_actions
+      #    end
+      #  end
       def sortable_columns
         column "&#9650;&#9650;".html_safe do |resource|
           link_to("&#9650;&#9650;".html_safe, self.send(:"move_to_top_admin_#{resource.class.model_name.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.first?
@@ -16,6 +32,21 @@ module ActiveAdmin
         end
       end
       
+      
+      # Call this inside your resource definition to add the needed member actions
+      # for your sortable resource.
+      #
+      # Example:
+      #
+      # #app/admin/players.rb
+      #
+      #  ActiveAdmin.register Player do
+      #    # Sort players by position
+      #    config.sort_order = 'position'
+      #   
+      #    # Add member actions for positioning.
+      #    sortable_member_actions
+      #  end
       def sortable_member_actions
        member_action :move_to_top do
           if resource.first?

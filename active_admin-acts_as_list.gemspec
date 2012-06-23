@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ActiveAdmin::ActsAsList::VERSION
   s.authors     = ["Roberto Vasquez Angel"]
   s.email       = ["roberto@vasquez-angel.de"]
-  s.homepage    = "http://blog.robotex.de"
+  s.homepage    = "https://github.com/robotex82/active_admin-acts_as_list"
   s.summary     = "Provides sortable_columns helper in active admin resource definitions."
   s.description = "Provides sortable_columns helper in active admin resource definitions."
 
@@ -19,4 +19,8 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.5"
 
   s.add_development_dependency "sqlite3"
+  
+  # Documentation
+  s.add_development_dependency "yard"  
+  s.add_development_dependency "thin" 
 end
