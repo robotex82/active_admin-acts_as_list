@@ -23,6 +23,17 @@ Add it to your gemfile:
 Install your bundle:
 
   > bundle install
+
+Add the following to your `active_admin.css.scss` file
+
+	@import "acts_as_list/base";
+	
+To overwrite the images provided in the gem, place new images at `app/assets/images/acts_as_list` with the following filenames:
+
+* move_up.png
+* move_to_top.png
+* move_down.png
+* move_to_bottom.png
   
 = Usage
 
