@@ -1,0 +1,16 @@
+en:
+  acts_as_list:
+    moved_to_top: "%{resource} moved to top"    
+    moved_up: "%{resource} moved up"
+    moved_down: "%{resource} moved down"
+    moved_to_bottom: "%{resource} moved to bottom"    
+    illegal_move_to_top: "Cannot move %{resource} to top"
+    illegal_move_up: "Cannot move %{resource} up"
+    illegal_move_down: "Cannot move %{resource} move down"
+    illegal_move_to_bottom: "Cannot move %{resource} to bottom"
+    hovers:
+      move_to_top: "Move to top"
+      move_up: "Move up"
+      move_down: "Move down"
+      move_to_bottom: "Move to bottom"
+      
