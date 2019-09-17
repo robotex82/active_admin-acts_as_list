@@ -18,7 +18,7 @@ You need active_admin and acts_as_list.
 
 Add it to your gemfile:
 
-  gem 'active_admin-acts_as_list'
+  gem 'active_admin-acts_as_list', git: 'git@github.com:michaelfahmy/active_admin-acts_as_list.git'
 
 Install your bundle:
 
