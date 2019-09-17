@@ -19,16 +19,16 @@ module ActiveAdmin
       #  end
       def sortable_columns
         column "&#9650;&#9650;".html_safe do |resource|
-          link_to("&#9650;&#9650;".html_safe, self.send(:"move_to_top_admin_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.first?
+          link_to("&#9650;&#9650;".html_safe, self.send(:"move_to_top_#{active_admin_namespace.name}_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.first?
         end
         column "&#9650;".html_safe do |resource|
-          link_to("&#9650;".html_safe, self.send(:"move_up_admin_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.first?
+          link_to("&#9650;".html_safe, self.send(:"move_up_#{active_admin_namespace.name}_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.first?
         end
         column "&#9660;".html_safe do |resource|
-          link_to("&#9660;".html_safe, self.send(:"move_down_admin_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.last?
+          link_to("&#9660;".html_safe, self.send(:"move_down_#{active_admin_namespace.name}_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.last?
         end
         column "&#9660;&#9660;".html_safe do |resource|
-          link_to("&#9660;&#9660;".html_safe, self.send(:"move_to_bottom_admin_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.last?
+          link_to("&#9660;&#9660;".html_safe, self.send(:"move_to_bottom_#{active_admin_namespace.name}_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path", resource), :class => "arrow") unless resource.last?
         end
       end
 
