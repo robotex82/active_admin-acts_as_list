@@ -26,16 +26,24 @@ module ActiveAdmin
 
           unless resource.first?
             # Move to top
-            actions << link_to('&#9650;&#9650; '.html_safe, (resource_path ? "#{resource_path}/move_to_top" : "move_to_top_#{default_path}"), class: 'arrow', title: 'Move to top')
+            actions << link_to((resource_path ? "#{resource_path}/move_to_top" : "move_to_top_#{default_path}"), class: 'arrow', title: 'Move to top') do
+              image_tag('acts_as_list/move_to_top.png')
+            end
             # Move up
-            actions << link_to('&#9650; '.html_safe, (resource_path ? "#{resource_path}/move_up" : "move_up_#{default_path}"), class: 'arrow', title: 'Move up')
+            actions << link_to((resource_path ? "#{resource_path}/move_up" : "move_up_#{default_path}"), class: 'arrow', title: 'Move up') do
+              image_tag('acts_as_list/move_up.png')
+            end
           end
 
           unless resource.last?
             # Move down
-            actions << link_to('&#9660; '.html_safe, (resource_path ? "#{resource_path}/move_down" : "move_down_#{default_path}"), class: 'arrow', title: 'Move down')
+            actions << link_to((resource_path ? "#{resource_path}/move_down" : "move_down_#{default_path}"), class: 'arrow', title: 'Move down') do
+              image_tag('acts_as_list/move_down.png')
+            end
             # Move to bottom
-            actions << link_to('&#9660;&#9660; '.html_safe, (resource_path ? "#{resource_path}/move_to_bottom" : "move_to_bottom_#{default_path}"), class: 'arrow', title: 'Move to bottom')
+            actions << link_to((resource_path ? "#{resource_path}/move_to_bottom" : "move_to_bottom_#{default_path}"), class: 'arrow', title: 'Move to bottom') do
+              image_tag('acts_as_list/move_to_bottom.png')
+            end
           end
 
           actions
