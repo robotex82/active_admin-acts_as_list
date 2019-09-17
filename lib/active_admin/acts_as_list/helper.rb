@@ -26,22 +26,22 @@ module ActiveAdmin
 
           unless resource.first?
             # Move to top
-            actions << link_to((resource_path ? "#{resource_path}/move_to_top" : "move_to_top_#{default_path}"), class: 'arrow', title: 'Move to top') do
+            actions << link_to((resource_path ? "#{resource_path}/move_to_top" : "move_to_top_#{default_path}"), class: 'acts_as_list_arrow', title: 'Move to top') do
               image_tag('acts_as_list/move_to_top.png')
             end
             # Move up
-            actions << link_to((resource_path ? "#{resource_path}/move_up" : "move_up_#{default_path}"), class: 'arrow', title: 'Move up') do
+            actions << link_to((resource_path ? "#{resource_path}/move_up" : "move_up_#{default_path}"), class: 'acts_as_list_arrow', title: 'Move up') do
               image_tag('acts_as_list/move_up.png')
             end
           end
 
           unless resource.last?
             # Move down
-            actions << link_to((resource_path ? "#{resource_path}/move_down" : "move_down_#{default_path}"), class: 'arrow', title: 'Move down') do
+            actions << link_to((resource_path ? "#{resource_path}/move_down" : "move_down_#{default_path}"), class: 'acts_as_list_arrow', title: 'Move down') do
               image_tag('acts_as_list/move_down.png')
             end
             # Move to bottom
-            actions << link_to((resource_path ? "#{resource_path}/move_to_bottom" : "move_to_bottom_#{default_path}"), class: 'arrow', title: 'Move to bottom') do
+            actions << link_to((resource_path ? "#{resource_path}/move_to_bottom" : "move_to_bottom_#{default_path}"), class: 'acts_as_list_arrow', title: 'Move to bottom') do
               image_tag('acts_as_list/move_to_bottom.png')
             end
           end
