@@ -20,21 +20,22 @@ module ActiveAdmin
       def sortable_column
         column '' do |resource|
           default_path = "#{active_admin_namespace.name}_#{resource.class.model_name.to_s.underscore.gsub("/", "_")}_path"
+          resource_path = yield resource if block_given?
 
           actions = ActiveSupport::SafeBuffer.new
 
           unless resource.first?
             # Move to top
-            actions << link_to('&#9650;&#9650; '.html_safe, self.send(:"move_to_top_#{default_path}", resource), class: 'arrow')
+            actions << link_to('&#9650;&#9650; '.html_safe, (resource_path ? "#{resource_path}/move_to_top" : "move_to_top_#{default_path}"), class: 'arrow', title: 'Move to top')
             # Move up
-            actions << link_to('&#9650; '.html_safe, self.send(:"move_up_#{default_path}", resource), class: 'arrow')
+            actions << link_to('&#9650; '.html_safe, (resource_path ? "#{resource_path}/move_up" : "move_up_#{default_path}"), class: 'arrow', title: 'Move up')
           end
 
           unless resource.last?
             # Move down
-            actions << link_to('&#9660; '.html_safe, self.send(:"move_down_#{default_path}", resource), class: 'arrow')
+            actions << link_to('&#9660; '.html_safe, (resource_path ? "#{resource_path}/move_down" : "move_down_#{default_path}"), class: 'arrow', title: 'Move down')
             # Move to bottom
-            actions << link_to('&#9660;&#9660; '.html_safe, self.send(:"move_to_bottom_#{default_path}", resource), class: 'arrow')
+            actions << link_to('&#9660;&#9660; '.html_safe, (resource_path ? "#{resource_path}/move_to_bottom" : "move_to_bottom_#{default_path}"), class: 'arrow', title: 'Move to bottom')
           end
 
           actions

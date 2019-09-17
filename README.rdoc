@@ -50,6 +50,8 @@ You can add sortable columns, member actions and sorting like this:
     index do
       # This adds columns for moving up, down, top and bottom.
       sortable_column
+      # You can pass a block with a custom path for the resource like
+      # sortable_column { |resource| resource_path(resource) }
 
       #...
       column :firstname
